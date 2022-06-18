@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.pg.salud.ui.dashboard.DashboardFragment"
+        android:name="com.pg.salud.ui.registro.RegistroImc"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_registro_imc" />
 
     <fragment
         android:id="@+id/navigation_notifications"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "781713482025",
+    "project_id": "saludable-todo",
+    "storage_bucket": "saludable-todo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781713482025:android:7ca304b8556318c8df9738",
+        "android_client_info": {
+          "package_name": "com.pg.salud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781713482025-hkas4retckea9oejn8ptg1as44fenimi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArkNFGKhbxQqSG8-xVrzDnyGLiwDw1-jA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781713482025-hkas4retckea9oejn8ptg1as44fenimi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
