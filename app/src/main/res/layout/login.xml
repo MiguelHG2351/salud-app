@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:backgroundTint="@color/white"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/image_login" />
+
+    <TextView
+        android:id="@+id/Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:minHeight="48dp"
+        android:text="Iniciar Sesión"
+
+        android:textColor="@color/ap_gray"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Login"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:drawableStart="@drawable/icon_name"
+        android:drawablePadding="12dp"
+        android:ems="17"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#191313" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Name"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:drawableStart="@drawable/icon_lock"
+        android:drawablePadding="12dp"
+        android:ems="17"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:maxLength="16"
+        android:minHeight="48dp"
+        android:textColor="#191313" />
+
+    <Button
+        android:id="@+id/button_Login"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_below="@id/Password"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Iniciar sesion"
+        android:textColor="#FFFF"
+        app:iconTint="@color/purple_700" />
+
+    <Button
+        android:id="@+id/button_Register"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_below="@id/Password"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="Registrar"
+        android:textColor="#FFFF"
+        app:iconTint="@color/purple_700" />
+</RelativeLayout>
