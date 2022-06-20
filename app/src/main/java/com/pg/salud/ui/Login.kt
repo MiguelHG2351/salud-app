@@ -4,7 +4,6 @@ import android.content.Intent
 //import com.google.firebase.auth.FirebaseAuth
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
@@ -31,7 +30,12 @@ class Login : AppCompatActivity() {
             val name = binding.Name.text.toString()
             val passowrd = binding.Password.text.toString()
 
-           /* if(!name.isEmpty()&&!passowrd.isEmpty()){
+            Toast.makeText(baseContext, "Bienvenido/a",
+                Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+/*
+            if(!name.isEmpty()&&!passowrd.isEmpty()){
                 firebaseAuth.signInWithEmailAndPassword(name, passowrd)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
@@ -56,7 +60,7 @@ class Login : AppCompatActivity() {
                 Toast.makeText(baseContext, "No dejar campos vacios",
                     Toast.LENGTH_SHORT).show()
             }
-            */
+*/
         }
         //Abre pantalla de registro
         binding.buttonRegister.setOnClickListener {
