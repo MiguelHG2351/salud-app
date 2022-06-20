@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/drawable-v24/ic_dashboard_black_24dp.xml" value="0.194" />
+        <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.194" />
+        <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.194" />
+        <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/drawable-v24/icon_search.xml" value="0.194" />
         <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/drawable/ic_home_icon.xml" value="0.1945" />
         <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/layout/activity_calculadora_menu.xml" value="0.25" />
         <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/layout/calculadora_imc.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/layout/fragment_calculadora_menu.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/layout/fragment_calculadora_registro.xml" value="0.33" />
         <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/layout/fragment_registro_imc.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/migueltemp/AndroidStudioProjects/salud/app/src/main/res/layout/home_salud.xml" value="0.22447916666666667" />
       </map>
     </option>
   </component>
