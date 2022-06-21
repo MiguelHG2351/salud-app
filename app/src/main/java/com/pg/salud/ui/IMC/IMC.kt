@@ -47,7 +47,7 @@ class IMC : Fragment() {
                     gson()
                 }
         }
-        CoroutineScope(Dispatchers.IO).launch {
+            CoroutineScope(Dispatchers.IO).launch {
             val joke: List<Users> = client.get("https://api-salud.herokuapp.com/users").body()
             withContext(Dispatchers.Main) {
                 println(joke.get(0).username)
