@@ -1,7 +1,7 @@
 package com.pg.salud
 
 import android.content.Intent
-//import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
@@ -12,7 +12,7 @@ import com.pg.salud.databinding.LoginBinding
 class Login : AppCompatActivity() {
     private lateinit var binding: LoginBinding
 
-   // private val firebaseAuth = FirebaseAuth.getInstance()
+    private val firebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +30,6 @@ class Login : AppCompatActivity() {
             val name = binding.Name.text.toString()
             val passowrd = binding.Password.text.toString()
 
-            Toast.makeText(baseContext, "Bienvenido/a",
-                Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
-/*
             if(!name.isEmpty()&&!passowrd.isEmpty()){
                 firebaseAuth.signInWithEmailAndPassword(name, passowrd)
                     .addOnCompleteListener(this) { task ->
@@ -42,7 +37,7 @@ class Login : AppCompatActivity() {
                             // Sign in success, update UI with the signed-in user's information
                             //Log.d("Login", "signInWithEmail:success")
                             val user = firebaseAuth.currentUser
-                            val intent = Intent(this, inApp::class.java)
+                            val intent = Intent(this, MainActivity::class.java)
                             Toast.makeText(baseContext, "Bienvenido/a",
                                 Toast.LENGTH_SHORT).show()
                             startActivity(intent)
@@ -60,7 +55,7 @@ class Login : AppCompatActivity() {
                 Toast.makeText(baseContext, "No dejar campos vacios",
                     Toast.LENGTH_SHORT).show()
             }
-*/
+
         }
         //Abre pantalla de registro
         binding.buttonRegister.setOnClickListener {

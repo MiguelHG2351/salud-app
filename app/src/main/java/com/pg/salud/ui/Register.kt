@@ -11,12 +11,12 @@ import androidx.core.util.PatternsCompat
 import com.pg.salud.R
 import com.pg.salud.databinding.RegisterBinding
 import java.util.regex.Pattern
-//import com.google.firebase.auth.FirebaseAuth
-//import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Register : AppCompatActivity() {
     private lateinit var binding: RegisterBinding
-   // private val firestore = FirebaseFirestore.getInstance()
+    private val firestore = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +43,7 @@ class Register : AppCompatActivity() {
             return
         }
         else {
-            /*
+
              FirebaseAuth.getInstance()
                 .createUserWithEmailAndPassword(
                     binding.mailInput.text.toString(),
@@ -65,7 +65,7 @@ class Register : AppCompatActivity() {
                     }
 
                     if (it.isSuccessful) {
-                        startActivity(Intent(this, inApp::class.java))
+                        startActivity(Intent(this, MainActivity::class.java))
                         finish()
                     } else {
                         println(it.exception)
@@ -73,7 +73,7 @@ class Register : AppCompatActivity() {
                     }
                 }
 
-             */
+
         }
     }
 
@@ -117,15 +117,6 @@ class Register : AppCompatActivity() {
             3 -> Toast.makeText(this, "Escriba una contraseña", Toast.LENGTH_LONG).show()
             4 -> Toast.makeText(this, "Contraseña muy debil", Toast.LENGTH_LONG).show()
             9 -> Toast.makeText(this, "Contraseña necesita al menos 6 caracteres", Toast.LENGTH_LONG).show()
-
-            /*
-              5 -> Toast.makeText(this, "Contraseña necesita al menos 1 simbolo", Toast.LENGTH_LONG).show()
-              6 -> Toast.makeText(this, "Contraseña necesita al menos 1 minuscula", Toast.LENGTH_LONG).show()
-              7 -> Toast.makeText(this, "Contraseña necesita al menos 1 mayuscula", Toast.LENGTH_LONG).show()
-              8 -> Toast.makeText(this, "Contraseña necesita al menos 1 numero", Toast.LENGTH_LONG).show()
-              10 ->Toast.makeText(this, "Contraseña no puede contener espacios", Toast.LENGTH_LONG).show()
-              11 ->Toast.makeText(this, "Error desconocido", Toast.LENGTH_LONG).show()
-            */
             0 -> salida = true
          }
         println("verificacion:" + salida)
@@ -133,11 +124,6 @@ class Register : AppCompatActivity() {
         return salida
     }
 
-    //codigos de error:
-    // 1 email vacio
-    // 2 email no cumple
 
-    // 3 pass vacio
-    // 4 pass debil
 
 }
