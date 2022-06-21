@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.pg.salud.databinding.FragmentHomeBinding
+import dagger.hilt.android.scopes.FragmentScoped
 
+@FragmentScoped
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null

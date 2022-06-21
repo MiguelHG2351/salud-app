@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("xDDDDD miguel java")
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 

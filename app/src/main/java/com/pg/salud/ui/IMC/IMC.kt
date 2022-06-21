@@ -5,67 +5,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.pg.salud.adapters.IMCAdapter
 import com.pg.salud.databinding.FragmentRegistroImcBinding
-import io.ktor.client.*
-import io.ktor.client.call.*
-import io.ktor.client.engine.cio.*
-import io.ktor.client.plugins.contentnegotiation.*
-import io.ktor.client.request.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import io.ktor.client.plugins.contentnegotiation.*
-import io.ktor.serialization.gson.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.WithFragmentBindings
+import dagger.hilt.android.scopes.FragmentScoped
 
+//@WithFragmentBindings
+@FragmentScoped
 class IMC : Fragment() {
-    private lateinit var binding: FragmentRegistroImcBinding
+    private var _binding: FragmentRegistroImcBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: IMCViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRegistroImcBinding.inflate(inflater, container, false)
-
-//        val results = intent.getStringExtra("json_results")
-        return binding.root
+        _binding = FragmentRegistroImcBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+        return root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        println("xD1")
-        getData()
-        println("xD2")
-    }
 
+        val imcAdapter = IMCAdapter()
+        val context = this.context
 
-    fun getData() {
-        val client = HttpClient(CIO) {
-                install(ContentNegotiation) {
-                    gson()
-                }
-        }
-            CoroutineScope(Dispatchers.IO).launch {
-            val joke: List<Users> = client.get("https://api-salud.herokuapp.com/users").body()
-            withContext(Dispatchers.Main) {
-                println(joke.get(0).username)
-                println(joke.get(1).username)
-                println(joke.get(2).username)
+        binding.apply {
+            cardRegistro.apply {
+                adapter = imcAdapter
+                layoutManager = LinearLayoutManager(this.context)
+            }
+
+            viewModel.IMCs.observe(viewLifecycleOwner) { users ->
+                imcAdapter.submitList(users)
             }
         }
-        // println(joke.)
     }
 
-//        super.onDestroyView()
-//        val init_api = Retrofit.Builder().baseUrl("https://api-salud.herokuapp.com").build()
-//        val data = init_api.create(APIServices::class.java)
-//        data.getUsers(this@IMC, IMC)
-//    override fun onDestroyView() {
-//
-//    }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
-
-data class Users(val username: String, val email: String, val name: String)

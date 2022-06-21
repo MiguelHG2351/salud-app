@@ -16,6 +16,10 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (firebaseAuth.currentUser != null) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
         binding = LoginBinding.inflate(layoutInflater)
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
