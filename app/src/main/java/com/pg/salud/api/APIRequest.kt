@@ -1,17 +1,5 @@
 package com.pg.salud.api
 
-import android.content.Context
-import android.content.Intent
-import android.util.Log
-import android.view.View
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonParser
-import com.pg.salud.ui.IMC.IMC
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.Retrofit
 
 interface APIRequest {
 //        fun getMethod(context: Context, destination:View) {
