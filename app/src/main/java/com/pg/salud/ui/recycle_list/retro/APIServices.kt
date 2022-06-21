@@ -1,6 +1,9 @@
-package com.pg.salud.api
+package com.pg.salud.ui.recycle_list.retro
 
 import com.pg.salud.ui.IMC.IMC
+import com.pg.salud.ui.recycle_list.RecyclerList
+import com.pg.salud.ui.recycle_list.User
+import com.pg.salud.ui.recycle_list.UserList
 import retrofit2.http.GET
 
 //import okhttp3.RequestBody
@@ -15,6 +18,6 @@ interface APIServices {
 
 //    Request using @Query (e.g https://reqres.in/api/users?page=2)
     @GET("/users")
-    suspend fun getUsers(): List<com.pg.salud.data.IMC>
+    suspend fun getUsers(): UserList
 //    https://api-salud.herokuapp.com
 }

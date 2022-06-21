@@ -5,19 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.pg.salud.adapters.IMCAdapter
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.RecyclerView
 import com.pg.salud.databinding.FragmentRegistroImcBinding
-import androidx.recyclerview.widget.LinearLayoutManager
-import dagger.hilt.android.WithFragmentBindings
-import dagger.hilt.android.scopes.FragmentScoped
+import com.pg.salud.databinding.RowsBinding
+import com.pg.salud.ui.recycle_list.RecyclerListFragment
+import com.pg.salud.ui.recycle_list.RecyclerViewAdapter
 
-//@WithFragmentBindings
-@FragmentScoped
+
 class IMC : Fragment() {
     private var _binding: FragmentRegistroImcBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: IMCViewModel by viewModels()
+    private val recyclerView: RecyclerView? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,27 +26,25 @@ class IMC : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentRegistroImcBinding.inflate(inflater, container, false)
+        val listBin = RowsBinding.inflate(layoutInflater)
+        val listRoot = listBin.root
+        binding.fragmentRegistro.addView(listRoot)
+        println("nooooooooooooooo")
         val root: View = binding.root
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val imcAdapter = IMCAdapter()
-        val context = this.context
-
-        binding.apply {
-            cardRegistro.apply {
-                adapter = imcAdapter
-                layoutManager = LinearLayoutManager(this.context)
-            }
-
-            viewModel.IMCs.observe(viewLifecycleOwner) { users ->
-                imcAdapter.submitList(users)
-            }
-        }
     }
+//    private fun setupFragment() {
+//
+//        val fragment  = RecyclerListFragment.newInstance()
+//        val fragmentManager: FragmentManager = supportFragmentManager
+//        val fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+//        fragmentTransaction.replace(android.R.id.content, fragment)
+//        fragmentTransaction.commit()
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

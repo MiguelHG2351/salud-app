@@ -12,6 +12,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -20,6 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.pg.salud.databinding.ActivityMainBinding
+import com.pg.salud.ui.recycle_list.RecyclerListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -153,7 +156,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun changeUsername(nombre:String){
+    private fun changeUsername(nombre:String) {
         //buscar correo del usuario actual
         val correoActual = FirebaseAuth.getInstance().currentUser?.email
         //buscar usuarios en la db
@@ -169,46 +172,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-//    fun getMethod() {
-//
-//        // Create Retrofit
-//        val retrofit = Retrofit.Builder()
-//            .baseUrl("http://dummy.restapiexample.com")
-//            .build()
-//
-//        // Create Service
-//        val service = retrofit.create(APIServices::class.java)
-//
-//        CoroutineScope(Dispatchers.IO).launch {
-//            /*
-//             * For @Query: You need to replace the following line with val response = service.getEmployees(2)
-//             * For @Path: You need to replace the following line with val response = service.getEmployee(53)
-//             */
-//
-//            // Do the GET request and get response
-//            val response = service.getUsers()
-//
-//            withContext(Dispatchers.Main) {
-//                if (response.isSuccessful) {
-//
-//                    // Convert raw JSON to pretty JSON using GSON library
-//                    val gson = GsonBuilder().setPrettyPrinting().create()
-//                    val prettyJson = gson.toJson(
-//                        JsonParser.parseString(
-//                            response.body()
-//                                ?.string() // About this thread blocking annotation : https://github.com/square/retrofit/issues/3255
-//                        )
-//                    )
-//                    Log.d("Pretty Printed JSON :", prettyJson)
-//
-////                    val intent = Intent(this@MainActivity, IMC::class.java)
-////                    intent.putExtra("json_results", prettyJson)
-////                    FragmentRegistroImcBinding.inflate(layoutInflater, )
-//                } else {
-//                    Log.e("RETROFIT_ERROR", response.code().toString())
-//
-//                }
-//            }
-//        }
-//    }
 }

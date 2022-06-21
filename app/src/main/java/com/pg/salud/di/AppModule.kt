@@ -1,6 +1,6 @@
 package com.pg.salud.di
 
-import com.pg.salud.api.APIServices
+import com.pg.salud.ui.recycle_list.retro.APIServices
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
