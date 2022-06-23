@@ -194,18 +194,23 @@
 
             </LinearLayout>
 
-            <com.androidplot.xy.XYPlot
-                android:id="@+id/plot"
-                style="@style/APDefacto.Light"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:title="XY plot simple" />
-
-            <TextView
-                android:id="@+id/showUsers"
+<!--            <com.androidplot.xy.XYPlot-->
+<!--                android:id="@+id/plot"-->
+<!--                style="@style/APDefacto.Light"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:title="XY plot simple" />-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/registro_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_header_your_art" />
         </LinearLayout>
     </ScrollView>
 

@@ -22,7 +22,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.pg.salud.databinding.ActivityMainBinding
-import com.pg.salud.ui.recycle_list.RecyclerListFragment
 
 class MainActivity : AppCompatActivity() {
 
