@@ -1,9 +1,7 @@
 package com.pg.salud.models.registro
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
 import com.pg.salud.mocks.FakeRegistroDataSource
@@ -11,10 +9,7 @@ import com.pg.salud.models.registro.task.Registro
 import com.pg.salud.models.registro.task.RegistroList
 import com.pg.salud.retro.RetroInstance
 import com.pg.salud.ui.IMC.IMC
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import retrofit2.Retrofit
 import retrofit2.http.GET
 
@@ -31,6 +26,7 @@ class RegistroViewModel: ViewModel() {
             if (newsData.value.isNullOrEmpty()) {
                 newsData.value = FakeRegistroDataSource.createDataSet()
             }
+
             viewModelScope.launch(Dispatchers.IO) {
                 val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
                 val response  = retroInstance.getUsers()
@@ -41,6 +37,9 @@ class RegistroViewModel: ViewModel() {
 
             return  newsData
         }
+    fun updateViewData(data: List<Registro>) {
+            newsData.postValue(data)
+    }
 }
 
 interface APIServices {

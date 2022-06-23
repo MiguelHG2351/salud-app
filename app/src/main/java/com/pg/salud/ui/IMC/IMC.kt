@@ -8,13 +8,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pg.salud.databinding.FragmentRegistroImcBinding
+import com.pg.salud.models.registro.APIServices
 import com.pg.salud.models.registro.RegistroViewModel
 import com.pg.salud.models.registro.task.Registro
 import com.pg.salud.models.registro.task.RegistrosRecyclerAdapter
+import com.pg.salud.retro.RetroInstance
 import com.pg.salud.ui.decorations.PaddingItemDecoration
+import kotlinx.coroutines.*
 
 
 class IMC : Fragment() {
@@ -53,7 +57,17 @@ class IMC : Fragment() {
 
         newsModel.data.observe(viewLifecycleOwner) { news ->
             newsAdapter.updateData(news)
+        }
 
+        CoroutineScope(Dispatchers.IO).launch {
+            val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
+            val response  = retroInstance.getUsers()
+            withContext(Dispatchers.Main) {
+                println(response.items)
+                Log.i("xxxxxxxxx", response.items[0].name)
+                newsModel.updateViewData(response.items)
+                newsAdapter.notifyDataSetChanged()
+            }
         }
 
     }
