@@ -13,6 +13,12 @@ import com.pg.salud.databinding.RegisterBinding
 import java.util.regex.Pattern
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.pg.salud.api.APIServices
+import com.pg.salud.models.registro.task.Table
+import com.pg.salud.retro.RetroInstance
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class Register : AppCompatActivity() {
     private lateinit var binding: RegisterBinding
@@ -60,6 +66,13 @@ class Register : AppCompatActivity() {
                         println("Se agrego a firestore")
 
                         Toast.makeText(this, "Registrado correctamente", Toast.LENGTH_LONG).show()
+
+                        CoroutineScope(Dispatchers.IO).launch {
+                            val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
+
+                            val table = Table("Menú Registro", binding.mailInput.text.toString(), 60.0, 4.4, 55.6, 1.70)
+                            val response  = retroInstance.createTable(table)
+                        }
                     }.addOnFailureListener { e ->
                         Toast.makeText(this, "Correo ya en uso", Toast.LENGTH_LONG).show()
                         println("Error adding document ${e.message.toString()}")

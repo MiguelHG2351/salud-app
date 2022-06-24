@@ -22,19 +22,19 @@ class RegistroViewModel: ViewModel() {
         get() = selectedNews.value
         set(value)  { selectedNews.value = value }
 
-    val data: MutableLiveData<List<Registro>>
+        val data: MutableLiveData<List<Registro>>
         get() {
             if (newsData.value.isNullOrEmpty()) {
                 newsData.value = FakeRegistroDataSource.createDataSet()
             }
 
-            viewModelScope.launch(Dispatchers.IO) {
-                val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
-                val response  = retroInstance.getUsers()
-                println(response.items)
-                Log.i("xxxxxxxxx", response.items[0].imc.toString())
-                newsData.postValue(response.items)
-            }
+//            viewModelScope.launch(Dispatchers.IO) {
+//                val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
+//                val response  = retroInstance.getUsers()
+//                println(response.items)
+//                Log.i("xxxxxxxxx", response.items[0].imc.toString())
+//                newsData.postValue(response.items)
+//            }
 
             return  newsData
         }

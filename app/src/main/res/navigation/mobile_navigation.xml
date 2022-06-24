@@ -15,7 +15,11 @@
         android:id="@+id/navigation_IMC"
         android:name="com.pg.salud.ui.IMC.IMC"
         android:label="@string/title_IMC"
-        tools:layout="@layout/fragment_registro_imc" />
+        tools:layout="@layout/fragment_registro_imc" >
+        <action
+            android:id="@+id/action_navigation_IMC_to_navigation_calc"
+            app:destination="@id/navigation_calc" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -33,4 +37,13 @@
         android:name="com.pg.salud.ui.notifications.recordatorios_in"
         android:label="@string/title_recordatorios"
         tools:layout="@layout/fragment_recordatorios_in" />
+    <fragment
+        android:id="@+id/navigation_calc"
+        android:name="com.pg.salud.ui.calc.CalculadoraIMC"
+        android:label="@string/title_recordatorios"
+        tools:layout="@layout/calculadora_imc" >
+        <action
+            android:id="@+id/action_navigation_calc_to_navigation_IMC"
+            app:destination="@id/navigation_IMC" />
+    </fragment>
 </navigation>
