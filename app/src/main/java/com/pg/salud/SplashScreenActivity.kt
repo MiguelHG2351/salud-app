@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 class SplashScreenActivity : AppCompatActivity() {
     private val firebaseAuth = FirebaseAuth.getInstance()
     lateinit var imageView: ImageView
-    val url = "https://cdn.dribbble.com/users/3067670/screenshots/5924357/media/4fa8733302361b3c3d576ced8e9ad4c1.gif"
+    val url = "https://i.pinimg.com/originals/79/c7/ff/79c7ff9d622c8fae535a06898f0d6700.gif"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

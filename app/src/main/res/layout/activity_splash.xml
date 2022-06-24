@@ -7,7 +7,7 @@
     android:background="@color/white"
 
 
-    android:backgroundTint="@color/white"
+    android:backgroundTint="#EDFEFF"
     tools:context=".MainActivity">
 
     <LinearLayout
