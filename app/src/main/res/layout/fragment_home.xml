@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     tools:ignore="NamespaceTypo">
 
@@ -103,9 +104,10 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
         android:id="@+id/tareasRecyclerView"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="225dp" />
+
     <LinearLayout
         android:id="@+id/card_tarea"
         android:layout_width="370dp"

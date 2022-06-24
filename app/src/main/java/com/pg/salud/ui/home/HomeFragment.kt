@@ -74,7 +74,6 @@ class HomeFragment : Fragment() {
                 requireActivity().application
             )
             adapter = newsAdapter
-            addItemDecoration(PaddingItemDecoration(30, 0, 30, 100))
         }
 
 //        newsModel.data.observe(viewLifecycleOwner) { news ->
