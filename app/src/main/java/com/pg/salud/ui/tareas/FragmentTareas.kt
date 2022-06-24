@@ -35,32 +35,39 @@ class FragmentTareas: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.agregar.setOnClickListener {
             val tag = binding.tareasTag.text.toString()
             val title = binding.tareasName.text.toString()
             val description = binding.tareasDescription.text.toString()
-            val time = binding.tareasTiempo.text.toString().toInt()
+            val time = binding.tareasTiempo.text.toString()
 
+            if(tag.isNotEmpty() && title.isNotEmpty() && description.isNotEmpty() && time.isNotEmpty()){
 
-            CoroutineScope(Dispatchers.IO).launch {
-                if(correoActual?.length!! > 0) {
-                    val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
-                    val response  = retroInstance.getUsers(correoActual)
-                    val tareasData = TaskRequest(response.id, tag, title, description, time)
-                    val submitRecordatorio = retroInstance.createTareas(tareasData)
+                CoroutineScope(Dispatchers.IO).launch {
+                    if (correoActual?.length!! > 0) {
+                        val retroInstance =
+                            RetroInstance.getRetroInstance().create(APIServices::class.java)
+                        val response = retroInstance.getUsers(correoActual)
+                        val tareasData = TaskRequest(response.id, tag, title, description, time.toInt())
+                        val submitRecordatorio = retroInstance.createTareas(tareasData)
 
-                    withContext(Dispatchers.Main) {
-                        binding.tareasTag.text.clear()
-                        binding.tareasName.text.clear()
-                        binding.tareasDescription.text.clear()
-                        binding.tareasTiempo.text.clear()
-                        Toast.makeText(context, "Enviado correctamente", Toast.LENGTH_LONG).show()
+                        withContext(Dispatchers.Main) {
+                            binding.tareasTag.text.clear()
+                            binding.tareasName.text.clear()
+                            binding.tareasDescription.text.clear()
+                            binding.tareasTiempo.text.clear()
+                            Toast.makeText(context, "Enviado correctamente", Toast.LENGTH_LONG)
+                                .show()
+                        }
                     }
                 }
             }
+            else{
+                Toast.makeText(context, "No dejar campos vacios", Toast.LENGTH_LONG).show()
+            }
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

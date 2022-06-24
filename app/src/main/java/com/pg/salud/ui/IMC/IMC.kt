@@ -64,22 +64,25 @@ class IMC : Fragment() {
 
         CoroutineScope(Dispatchers.IO).launch {
             if(correoActual?.length!! > 0) {
-                val fake = ArrayList<Registro>()
                 val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
                 val response  = retroInstance.getUsers(correoActual)
-                withContext(Dispatchers.Main) {
-                    println("La data sera")
-                    println(response)
-                    println(response.registro)
-                    Log.i("xxxxxxxxx", response.current.toString())
-                    newsModel.updateViewData(response.registro)
-                    newsAdapter.updateData(response.registro)
-                    newsAdapter.notifyDataSetChanged()
-                    emailId = response.id
-                    binding.CurrentWeight.text = "${response.current}kg"
-                    binding.CurrentWeightNumber.text = "${response.objective}kg"
-                    binding.needWeightWeightNumber.text = "${response.remaining}kg"
-                }
+
+
+                    withContext(Dispatchers.Main) {
+                        println("La data sera")
+                        println(response)
+                        println(response.registro)
+                        Log.i("xxxxxxxxx", response.current.toString())
+                        newsModel.updateViewData(response.registro)
+                        newsAdapter.updateData(response.registro)
+                        newsAdapter.notifyDataSetChanged()
+                        emailId = response.id
+                        binding.CurrentWeight.text = "${response.current}kg"
+                        binding.CurrentWeightNumber.text = "${response.objective}kg"
+                        binding.needWeightWeightNumber.text = "${response.remaining}kg"
+                    }
+
+
             }
         }
         binding.goToRegisterForm.setOnClickListener {

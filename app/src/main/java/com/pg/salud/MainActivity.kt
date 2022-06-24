@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    /*
     override fun onBackPressed() {
 
         val builder = AlertDialog.Builder(this)
@@ -85,6 +86,7 @@ class MainActivity : AppCompatActivity() {
             .setCancelable(false)
             .show()
     }
+    */
     fun showAlertDialog(view: View){
         val alert: AlertDialog.Builder = AlertDialog.Builder(this)
         alert.setTitle("Actualizar firma")
@@ -167,4 +169,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 }
