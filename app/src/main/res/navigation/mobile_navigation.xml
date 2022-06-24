@@ -28,4 +28,9 @@
         android:name="com.pg.salud.ui.profile.Profile"
         android:label="@string/title_profile"
         tools:layout="@layout/profile" />
+    <fragment
+        android:id="@+id/navigation_recordatorios"
+        android:name="com.pg.salud.ui.notifications.recordatorios_in"
+        android:label="@string/title_recordatorios"
+        tools:layout="@layout/fragment_recordatorios_in" />
 </navigation>

@@ -13,8 +13,12 @@
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@android:drawable/checkbox_on_background"
         android:title="@string/title_notifications" />
+    <item
+        android:id="@+id/navigation_recordatorios"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_recordatorios" />
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/icon_name"

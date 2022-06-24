@@ -4,6 +4,7 @@
     <string name="title_profile">Perfil</string>
     <string name="title_IMC">IMC</string>
     <string name="title_notifications">Tareas</string>
+    <string name="title_recordatorios">Recordatorios</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
