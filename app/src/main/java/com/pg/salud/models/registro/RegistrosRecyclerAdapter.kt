@@ -7,6 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.request.RequestOptions
 import com.pg.salud.databinding.RegistroCardBinding
 import com.pg.salud.R
+import java.text.SimpleDateFormat
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
+import kotlin.collections.ArrayList
 
 class RegistrosRecyclerAdapter(
     private var registroData: List<Registro> = ArrayList(),
@@ -47,8 +54,25 @@ class RegistrosRecyclerAdapter(
         fun bind(registro: Registro) {
 
             with(binding) {
-                labelDescription.text = registro.signature
-                labelAuthor.text = registro.name
+                println(registro)
+                var getDate: Long = registro.createdAt.seconds * 1000
+                val fecha = Date(getDate)
+                val dia = fecha.day
+                val mes = fecha.month
+                val year = fecha.year
+//                val timestampParse = DateTimeFormatter.ISO_INSTANT.format(Instant.ofEpochSecond((time.toLong())))
+//
+//                val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+//                val date = LocalDate.parse(timestampParse, formatter)
+                val formatter = SimpleDateFormat("yyyy-MM-dd")
+                val text = "2022-01-06"
+                val date = formatter.parse(text)
+                val set_imc = String.format("%.2f", registro.imc)
+
+                dateRegistro.text = "${dia}/${mes}/${year}"
+                imc.text = "IMC ${set_imc}kg/m²"
+                weight.text = registro.weight.toString()
+                diff.text = registro.diff.toString()
 
                 val requestOptions = RequestOptions()
                     .placeholder(R.drawable.ic_launcher_foreground)

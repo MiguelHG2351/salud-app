@@ -58,6 +58,7 @@ class Register : AppCompatActivity() {
                         )
                     ).addOnSuccessListener { documentReference ->
                         println("Se agrego a firestore")
+
                         Toast.makeText(this, "Registrado correctamente", Toast.LENGTH_LONG).show()
                     }.addOnFailureListener { e ->
                         Toast.makeText(this, "Correo ya en uso", Toast.LENGTH_LONG).show()

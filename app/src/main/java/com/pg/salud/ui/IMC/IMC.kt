@@ -11,8 +11,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pg.salud.api.APIServices
 import com.pg.salud.databinding.FragmentRegistroImcBinding
-import com.pg.salud.models.registro.APIServices
 import com.pg.salud.models.registro.RegistroViewModel
 import com.pg.salud.models.registro.task.Registro
 import com.pg.salud.models.registro.task.RegistrosRecyclerAdapter
@@ -39,7 +39,6 @@ class IMC : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
-
     }
 
     private fun initRecyclerView() {
@@ -64,9 +63,11 @@ class IMC : Fragment() {
             val response  = retroInstance.getUsers()
             withContext(Dispatchers.Main) {
                 println(response.items)
-                Log.i("xxxxxxxxx", response.items[0].name)
-                newsModel.updateViewData(response.items)
-                newsAdapter.notifyDataSetChanged()
+                if(response.items.size > 0) {
+                    Log.i("xxxxxxxxx", response.items[0].imc.toString())
+                    newsModel.updateViewData(response.items)
+                    newsAdapter.notifyDataSetChanged()
+                }
             }
         }
 
@@ -75,7 +76,7 @@ class IMC : Fragment() {
     private fun showAuthor(registro: Registro) {
         newsModel.selected = registro
         Toast.makeText(context,
-            newsModel.selected?.name ?: "The author is null",
+            newsModel.selected?.imc.toString() ?: "The author is null",
             Toast.LENGTH_LONG).show()
     }
 
