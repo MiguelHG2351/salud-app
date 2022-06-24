@@ -52,12 +52,16 @@ class Recordatorio: Fragment() {
             fecha = "${month}/${dayOfMonth}/${year} ${hora}"
         }
         binding.sendRecordatorio.setOnClickListener {
+            val tag = binding.tag.text.toString()
+            val title = binding.titleRecordatorio.text.toString()
+            val description = binding.descriptionRecorda.text.toString()
+
             CoroutineScope(Dispatchers.IO).launch {
                 if(correoActual?.length!! > 0) {
                     val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
                     val response  = retroInstance.getUsers(correoActual)
-                    val recordatorioData = RecordatorioRequest(response.id, binding.tag.text.toString(),
-                        binding.titleRecordatorio.text.toString(), binding.descriptionRecorda.text.toString(),
+                    val recordatorioData = RecordatorioRequest(response.id, tag,
+                        title, description,
                         fecha)
                     val submitRecordatorio = retroInstance.createRecordatorio(recordatorioData)
 
