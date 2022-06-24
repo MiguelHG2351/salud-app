@@ -102,7 +102,12 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/tareasRecyclerView"
+        android:layout_height="wrap_content" />
     <LinearLayout
+        android:id="@+id/card_tarea"
         android:layout_width="370dp"
         android:layout_height="127dp"
         android:layout_marginStart="22dp"
@@ -156,7 +161,9 @@
             android:textColor="@color/Black"
             android:textSize="12dp" />
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/card_recordatorio"
         android:layout_width="370dp"
         android:layout_height="127dp"
         android:layout_marginStart="22dp"

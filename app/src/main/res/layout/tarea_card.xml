@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/card_tarea"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/Yellow_background"
+        android:orientation="vertical"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="34dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tiempo"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/green"
+                android:text="Tiempo"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tag_tarea"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/white"
+                android:text="Correr"
+                android:textAlignment="center"
+                android:textColor="@color/Black"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="5dp"
+            android:text="Durante la manana"
+            android:textColor="@color/Black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:text="Planeaste correr en la mañana para bajar 100kg, esto por orden del doc"
+            android:textColor="@color/Black"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
