@@ -48,32 +48,40 @@ class Recordatorio: Fragment() {
 
         calendario.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val hora = binding.horaRecorda.text
-            println("xDDDDD")
             fecha = "${month}/${dayOfMonth}/${year} ${hora}"
         }
         binding.sendRecordatorio.setOnClickListener {
             val tag = binding.tag.text.toString()
             val title = binding.titleRecordatorio.text.toString()
             val description = binding.descriptionRecorda.text.toString()
+            val hora = binding.horaRecorda.text.toString()
 
-            CoroutineScope(Dispatchers.IO).launch {
-                if(correoActual?.length!! > 0) {
-                    val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
-                    val response  = retroInstance.getUsers(correoActual)
-                    val recordatorioData = RecordatorioRequest(response.id, tag,
-                        title, description,
-                        fecha)
-                    val submitRecordatorio = retroInstance.createRecordatorio(recordatorioData)
+            if(tag.isNotEmpty() && title.isNotEmpty() && description.isNotEmpty() && hora.isNotEmpty()){
 
-                    withContext(Dispatchers.Main) {
-                        binding.tag.text.clear()
-                        binding.titleRecordatorio.text.clear()
-                        binding.descriptionRecorda.text.clear()
-                        binding.horaRecorda.text.clear()
-                        Toast.makeText(context, "Enviado correctamente", Toast.LENGTH_LONG).show()
+                CoroutineScope(Dispatchers.IO).launch {
+                    if(correoActual?.length!! > 0) {
+                        val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
+                        val response  = retroInstance.getUsers(correoActual)
+                        val recordatorioData = RecordatorioRequest(response.id, tag,
+                            title, description,
+                            fecha)
+                        val submitRecordatorio = retroInstance.createRecordatorio(recordatorioData)
+
+                        withContext(Dispatchers.Main) {
+                            binding.tag.text.clear()
+                            binding.titleRecordatorio.text.clear()
+                            binding.descriptionRecorda.text.clear()
+                            binding.horaRecorda.text.clear()
+                            Toast.makeText(context, "Enviado correctamente", Toast.LENGTH_LONG).show()
+                        }
                     }
                 }
             }
+            else{
+                Toast.makeText(activity,"No dejar campos vacios" ,Toast.LENGTH_LONG).show()
+            }
+
+
         }
     }
 
