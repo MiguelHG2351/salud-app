@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    tools:context=".ui.recordatorio.Recordatorio"
     android:layout_height="match_parent">
 
     <CalendarView
@@ -22,83 +23,106 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
-        android:text="Caminar"
-        android:textSize="17dp"
+        android:text="Tag"
         android:textColor="@color/green"
-        />
+        android:textSize="17dp" />
 
-    <TextView
-        android:id="@+id/text_1"
-        android:layout_width="90dp"
-        android:layout_height="39dp"
+    <EditText
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/calendarView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="148dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="164dp"
-        android:text="hello there"
+        android:layout_marginEnd="80dp"
+        android:hint="Caminar"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/title_recordatorio"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tag"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:hint="Caminar de día"
         android:textSize="17dp" />
 
     <TextView
-        android:id="@+id/text_2"
-        android:layout_width="90dp"
-        android:layout_height="39dp"
-        android:layout_below="@id/text_1"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="164dp"
-        android:text="hello there"
-        android:textSize="17dp" />
-    <TextView
-        android:layout_below="@id/text_1"
         android:layout_width="65dp"
         android:layout_height="39dp"
+        android:layout_below="@id/tag"
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
-        android:text="Correr"
-        android:textSize="17dp"
+        android:text="Title"
         android:textColor="@color/green"
-        />
+        android:textSize="17dp" />
 
-    <TextView
-        android:id="@+id/text_3"
+    <EditText
+        android:id="@+id/description_recorda"
         android:layout_width="90dp"
-        android:layout_height="39dp"
-        android:layout_below="@id/text_2"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_recordatorio"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="148dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="164dp"
-        android:text="hello there"
+        android:layout_marginEnd="80dp"
+
+        android:hint="Caminar y comprar tortillas"
+        android:text=""
         android:textSize="17dp" />
 
     <TextView
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="39dp"
-        android:layout_below="@id/text_2"
+        android:layout_below="@id/title_recordatorio"
         android:layout_alignParentStart="true"
         android:layout_marginStart="39dp"
         android:layout_marginTop="15dp"
-        android:text="Barrer"
+        android:text="Description"
         android:textColor="@color/green"
-        android:textSize="17dp"
-        />
+        android:textSize="17dp" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_3"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="550dp"
+        android:text="Hora"
+        android:textColor="@color/green"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/hora_recorda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="540dp"
+        android:ems="10"
+        android:hint="02:40"
+        android:inputType="time"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/send_recordatorio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description_recorda"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="100dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginTop="15dp"
         android:backgroundTint="@color/white"
         android:text="Guardar Resultados"
         android:textColor="@color/green" />

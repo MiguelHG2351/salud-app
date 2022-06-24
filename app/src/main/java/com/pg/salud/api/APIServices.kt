@@ -1,5 +1,6 @@
 package com.pg.salud.api
 
+import com.pg.salud.models.recordatorio.RecordatorioRequest
 import com.pg.salud.models.registro.task.RegistroForm
 import com.pg.salud.models.registro.task.RegistroList
 import com.pg.salud.models.registro.task.Table
@@ -22,5 +23,9 @@ interface APIServices {
     @Headers("Content-Type: application/json")
     @POST("/registro")
     suspend fun createRegistro(@Body registro: RegistroForm)
+
+    @Headers("Content-Type: application/json")
+    @POST("/reminder")
+    suspend fun createRecordatorio(@Body registro: RecordatorioRequest)
 //    https://api-salud.herokuapp.com
 }

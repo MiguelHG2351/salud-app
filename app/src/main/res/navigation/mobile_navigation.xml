@@ -34,7 +34,7 @@
         tools:layout="@layout/profile" />
     <fragment
         android:id="@+id/navigation_recordatorios"
-        android:name="com.pg.salud.ui.notifications.recordatorios_in"
+        android:name="com.pg.salud.ui.recordatorio.Recordatorio"
         android:label="@string/title_recordatorios"
         tools:layout="@layout/fragment_recordatorios_in" />
     <fragment

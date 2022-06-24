@@ -73,7 +73,7 @@ class RegistrosRecyclerAdapter(
                     diff.text = "+${registro.diff.toString()}kg"
                     diff.setTextColor(Color.parseColor("#F91111"))
                 } else {
-                    diff.text = "-${registro.diff.toString()}kg"
+                    diff.text = "${registro.diff.toString()}kg"
                     diff.setTextColor(Color.parseColor("#0FCF9F"))
                 }
                 val requestOptions = RequestOptions()

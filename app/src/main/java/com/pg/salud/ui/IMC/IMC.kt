@@ -76,6 +76,9 @@ class IMC : Fragment() {
                     newsAdapter.updateData(response.registro)
                     newsAdapter.notifyDataSetChanged()
                     emailId = response.id
+                    binding.CurrentWeight.text = "${response.current}kg"
+                    binding.CurrentWeightNumber.text = "${response.objective}kg"
+                    binding.needWeightWeightNumber.text = "${response.remaining}kg"
                 }
             }
         }
