@@ -4,6 +4,7 @@ import com.pg.salud.models.recordatorio.RecordatorioRequest
 import com.pg.salud.models.registro.task.RegistroForm
 import com.pg.salud.models.registro.task.RegistroList
 import com.pg.salud.models.registro.task.Table
+import com.pg.salud.models.tasks.TaskRequest
 import retrofit2.http.*
 
 interface APIServices {
@@ -27,5 +28,9 @@ interface APIServices {
     @Headers("Content-Type: application/json")
     @POST("/reminder")
     suspend fun createRecordatorio(@Body registro: RecordatorioRequest)
+
+    @Headers("Content-Type: application/json")
+    @POST("/task")
+    suspend fun createTareas(@Body registro: TaskRequest)
 //    https://api-salud.herokuapp.com
 }

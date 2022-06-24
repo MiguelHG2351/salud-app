@@ -45,11 +45,10 @@ class Recordatorio: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var fecha = ""
         val calendario = binding.calendarView
-        Toast.makeText(context, "Selected date:", Toast.LENGTH_LONG).show()
+
         calendario.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val hora = binding.horaRecorda.text
             println("xDDDDD")
-            Toast.makeText(context, "Selected date: $dayOfMonth/$month/$year", Toast.LENGTH_LONG).show()
             fecha = "${month}/${dayOfMonth}/${year} ${hora}"
         }
         binding.sendRecordatorio.setOnClickListener {
@@ -67,6 +66,7 @@ class Recordatorio: Fragment() {
                         binding.titleRecordatorio.text.clear()
                         binding.descriptionRecorda.text.clear()
                         binding.horaRecorda.text.clear()
+                        Toast.makeText(context, "Enviado correctamente", Toast.LENGTH_LONG).show()
                     }
                 }
             }

@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.pg.salud.ui.notifications.NotificationsFragment"
+        android:name="com.pg.salud.ui.tareas.FragmentTareas"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 

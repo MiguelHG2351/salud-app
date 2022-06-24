@@ -57,7 +57,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextTag"
+                android:id="@+id/tareas_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -84,7 +84,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextTask"
+                android:id="@+id/tareas_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -111,7 +111,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextDescription"
+                android:id="@+id/tareas_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -138,13 +138,13 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextTime"
+                android:id="@+id/tareas_tiempo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/gray"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textAlignment="textEnd" />
 
         </LinearLayout>
