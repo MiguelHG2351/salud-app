@@ -1,5 +1,7 @@
 package com.pg.salud.models.registro.task
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
@@ -37,6 +39,7 @@ class RegistrosRecyclerAdapter(
     }
 
     override fun getItemCount(): Int {
+//        println("La longitud es ${registroData}")
         return registroData.size
     }
 
@@ -52,28 +55,27 @@ class RegistrosRecyclerAdapter(
         }
 
         fun bind(registro: Registro) {
-
+            println("El bind sera: ${registro}")
             with(binding) {
+                println("El bind en with sera: ${registro}")
                 println(registro)
                 var getDate: Long = registro.createdAt.seconds * 1000
                 val fecha = Date(getDate)
                 val dia = fecha.day
                 val mes = fecha.month
                 val year = fecha.year
-//                val timestampParse = DateTimeFormatter.ISO_INSTANT.format(Instant.ofEpochSecond((time.toLong())))
-//
-//                val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
-//                val date = LocalDate.parse(timestampParse, formatter)
-                val formatter = SimpleDateFormat("yyyy-MM-dd")
-                val text = "2022-01-06"
-                val date = formatter.parse(text)
                 val set_imc = String.format("%.2f", registro.imc)
 
                 dateRegistro.text = "${dia}/${mes}/${year}"
                 imc.text = "IMC ${set_imc}kg/m²"
-                weight.text = registro.weight.toString()
-                diff.text = registro.diff.toString()
-
+                weight.text = "${registro.weight.toString()}kg"
+                if(registro.diff > 0) {
+                    diff.text = "+${registro.diff.toString()}kg"
+                    diff.setTextColor(Color.parseColor("#F91111"))
+                } else {
+                    diff.text = "-${registro.diff.toString()}kg"
+                    diff.setTextColor(Color.parseColor("#0FCF9F"))
+                }
                 val requestOptions = RequestOptions()
                     .placeholder(R.drawable.ic_launcher_foreground)
                     .error(R.drawable.ic_launcher_foreground)

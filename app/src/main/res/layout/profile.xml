@@ -35,7 +35,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/go_to_register_form"
                     android:layout_width="158dp"
                     android:layout_height="158dp"
                     android:scaleType="centerCrop"

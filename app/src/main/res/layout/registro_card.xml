@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView android:id="@+id/card_registro"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_registro"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="18dp"
     android:orientation="vertical"
-    android:padding="18dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:padding="18dp">
 
     <LinearLayout
         android:id="@+id/registro_item"
