@@ -26,3 +26,28 @@ class TareasViewModel: ViewModel() {
         newsData.postValue(data)
     }
 }
+
+
+class RecordatorioViewModel: ViewModel() {
+    private val selectedNews : MutableLiveData<Recordatorio?> = MutableLiveData()
+    private val newsData: MutableLiveData<List<Recordatorio>> = MutableLiveData()
+
+
+    var selected: Recordatorio?
+        get() = selectedNews.value
+        set(value)  { selectedNews.value = value }
+
+    val data: MutableLiveData<List<Recordatorio>>
+        get() {
+            if (newsData.value.isNullOrEmpty()) {
+                val table = ArrayList<Recordatorio>()
+                val lista = table
+                newsData.value =  lista
+            }
+
+            return  newsData
+        }
+    fun updateViewData(data: List<Recordatorio>) {
+        newsData.postValue(data)
+    }
+}

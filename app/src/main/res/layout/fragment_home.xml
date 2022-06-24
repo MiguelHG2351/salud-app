@@ -117,119 +117,12 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tareasRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="349dp" />
+                android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:id="@+id/card_tarea"
-                android:layout_width="370dp"
-                android:layout_height="127dp"
-                android:layout_marginStart="22dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/Yellow_background"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="370dp"
-                    android:layout_height="34dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="11dp"
-                        android:background="@color/green"
-                        android:text="Tiempo"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="11dp"
-                        android:background="@color/white"
-                        android:text="Correr"
-                        android:textAlignment="center"
-                        android:textColor="@color/Black"
-                        android:textSize="14dp" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="185dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Durante la manana"
-                    android:textColor="@color/Black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="237dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
-                    android:text="Planeaste correr en la mañana para bajar 100kg, esto por orden del doc"
-                    android:textColor="@color/Black"
-                    android:textSize="12dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/card_recordatorio"
-                android:layout_width="370dp"
-                android:layout_height="127dp"
-                android:layout_marginStart="22dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/Green_background"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="370dp"
-                    android:layout_height="34dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="11dp"
-                        android:background="@color/green"
-                        android:text="Hora"
-                        android:textAlignment="center"
-                        android:textColor="@color/Black"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="11dp"
-                        android:background="@color/white"
-                        android:text="Agua"
-                        android:textAlignment="center"
-                        android:textColor="@color/Black"
-                        android:textSize="14dp" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="289dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Tomar agua despues de correr"
-                    android:textColor="@color/Black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="237dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
-                    android:text="Despues de correr tome agua >:v"
-                    android:textColor="@color/Black"
-                    android:textSize="12dp" />
-            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recordatorioRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </ScrollView>

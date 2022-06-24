@@ -2,6 +2,7 @@ package com.pg.salud.models.registro.task
 
 data class Registro(val imc: Double, val diff: Double, val weight: Double, val createdAt: Time)
 data class RegistroList(val id: String, val task: Any?,
+                        val reminder: Any?,
                         val registro: List<Registro>,
                         val name: String, val height: Double,
                         val remaining: Double, val objective: Int,

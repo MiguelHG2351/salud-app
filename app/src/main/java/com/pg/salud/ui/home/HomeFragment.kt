@@ -13,9 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.pg.salud.api.APIServices
 import com.pg.salud.databinding.FragmentHomeBinding
-import com.pg.salud.models.Home.Tarea
-import com.pg.salud.models.Home.TareasRecyclerAdapter
-import com.pg.salud.models.Home.TareasViewModel
+import com.pg.salud.models.Home.*
 import com.pg.salud.models.registro.task.Registro
 import com.pg.salud.models.registro.task.RegistrosRecyclerAdapter
 import com.pg.salud.retro.RetroInstance
@@ -33,6 +31,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private val correoActual = FirebaseAuth.getInstance().currentUser?.email
     private val newsModel: TareasViewModel by activityViewModels()
+    private val newsModel2: RecordatorioViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,12 +67,22 @@ class HomeFragment : Fragment() {
         val newsAdapter = TareasRecyclerAdapter {
             showAuthor(it) // On Item Click
         }
+        val news2Adapter = RecordatoriosRecyclerAdapter {
+            showAuthor2(it) // On Item Click
+        }
 
         binding.tareasRecyclerView.apply {
             layoutManager = LinearLayoutManager(
                 requireActivity().application
             )
             adapter = newsAdapter
+        }
+
+        binding.recordatorioRecyclerView.apply {
+            layoutManager = LinearLayoutManager(
+                requireActivity().application
+            )
+            adapter = news2Adapter
         }
 
 //        newsModel.data.observe(viewLifecycleOwner) { news ->
@@ -95,6 +104,11 @@ class HomeFragment : Fragment() {
                         newsAdapter.updateData(response.tasks)
                         newsAdapter.notifyDataSetChanged()
                     }
+                    if(response.reminder != null) {
+                        newsModel2.updateViewData(response.reminder)
+                        news2Adapter.updateData(response.reminder)
+                        news2Adapter.notifyDataSetChanged()
+                    }
                     emailId = response.id
                 }
             }
@@ -103,6 +117,13 @@ class HomeFragment : Fragment() {
 
     private fun showAuthor(registro: Tarea) {
         newsModel.selected = registro
+        Toast.makeText(context,
+            newsModel.selected?.description.toString() ?: "The author is null",
+            Toast.LENGTH_LONG).show()
+    }
+
+    private fun showAuthor2(registro: Recordatorio) {
+        newsModel2.selected = registro
         Toast.makeText(context,
             newsModel.selected?.description.toString() ?: "The author is null",
             Toast.LENGTH_LONG).show()
