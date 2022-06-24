@@ -1,22 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    android:orientation="vertical"
+    tools:context=".ui.notifications.NotificationsFragment" >
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="72dp"
+            android:layout_height="46dp"
+            android:layout_gravity="clip_vertical"
+            android:paddingTop="10dp"
+            android:src="@drawable/ic_notifications_black_24dp"
+            app:tint="@color/green" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="343dp"
+            android:layout_height="93dp"
+            android:layout_gravity="clip_vertical"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="10dp"
+            android:text="Programar tareas"
+            android:textAlignment="textStart"
+            android:textColor="@color/green"
+            android:textSize="25dp"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="635dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="123dp"
+                android:layout_height="50dp"
+                android:text="Etiqueta"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/gray"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:text="Tarea"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/Black"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:text="Descripcion"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/Black"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="50dp"
+                android:text="Duracion"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/gray"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_guardar_resultado4"
+            android:layout_width="284dp"
+            android:layout_height="61dp"
+
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/white"
+            android:text="+ Agregar tarea"
+            android:textAlignment="center"
+            android:textColor="@color/green" />
+
+    </LinearLayout>
+
+</LinearLayout>
