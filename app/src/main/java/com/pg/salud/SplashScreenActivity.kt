@@ -24,7 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.splashbookavo)
+        setContentView(R.layout.activity_splash)
         imageView = findViewById(R.id.imageView)
         Glide.with(this).load(url).into(imageView)
 
