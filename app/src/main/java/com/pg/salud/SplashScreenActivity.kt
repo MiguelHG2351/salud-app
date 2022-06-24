@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 class SplashScreenActivity : AppCompatActivity() {
     private val firebaseAuth = FirebaseAuth.getInstance()
     lateinit var imageView: ImageView
-    val url = "https://media2.giphy.com/media/4F1kg9OCP0Lr9n0z9Z/giphy.gif?cid=790b7611340fd7ae6ff9f41d873f0e7dbbebb72a68ade012&rid=giphy.gif"
+    val url = "https://cdn.dribbble.com/users/3067670/screenshots/5924357/media/4fa8733302361b3c3d576ced8e9ad4c1.gif"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +39,7 @@ class SplashScreenActivity : AppCompatActivity() {
                 }
 
             },
-            3000 // value in milliseconds
+            6000 // value in milliseconds
         )
     }
 }
