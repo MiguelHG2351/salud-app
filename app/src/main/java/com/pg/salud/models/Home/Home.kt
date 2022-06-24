@@ -11,3 +11,4 @@ data class TableHome(val id: String, val tasks: List<Tarea>,
                         val user: String)
 
 data class Tarea(val time: Int, val tag: String, val description: String, val title: String)
+data class Recordatorio(val time: Int, val tag: String, val description: String, val title: String)
