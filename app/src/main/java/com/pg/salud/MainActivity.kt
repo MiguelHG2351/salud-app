@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Salir")
-        builder.setMessage("¿Desea cerrar Bookavo?")
+        builder.setMessage("¿Desea cerrar la aplicacion?")
             .setPositiveButton(
                 "Salir"
             ) { dialog, which ->

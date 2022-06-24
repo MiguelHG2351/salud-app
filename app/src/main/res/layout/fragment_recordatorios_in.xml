@@ -23,7 +23,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
-        android:text="Tag"
+        android:text="Etiqueta"
         android:textColor="@color/green"
         android:textSize="17dp" />
 
@@ -62,7 +62,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
-        android:text="Title"
+        android:text="Tarea"
         android:textColor="@color/green"
         android:textSize="17dp" />
 
@@ -88,7 +88,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="39dp"
         android:layout_marginTop="15dp"
-        android:text="Description"
+        android:text="Descripcion"
         android:textColor="@color/green"
         android:textSize="17dp" />
 
