@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
+import com.pg.salud.api.APIServices
 import com.pg.salud.mocks.FakeRegistroDataSource
 import com.pg.salud.models.registro.task.Registro
 import com.pg.salud.models.registro.task.RegistroList
@@ -31,7 +32,7 @@ class RegistroViewModel: ViewModel() {
                 val retroInstance = RetroInstance.getRetroInstance().create(APIServices::class.java)
                 val response  = retroInstance.getUsers()
                 println(response.items)
-                Log.i("xxxxxxxxx", response.items[0].name)
+                Log.i("xxxxxxxxx", response.items[0].imc.toString())
                 newsData.postValue(response.items)
             }
 
@@ -41,15 +42,15 @@ class RegistroViewModel: ViewModel() {
             newsData.postValue(data)
     }
 }
-
-interface APIServices {
-
-    companion object {
-        const val BASE_URL = "https://api-salud.herokuapp.com/"
-    }
-
-    //    Request using @Query (e.g https://reqres.in/api/users?page=2)
-    @GET("/users")
-    suspend fun getUsers(): RegistroList
-//    https://api-salud.herokuapp.com
-}
+//
+//interface APIServices {
+//
+//    companion object {
+//        const val BASE_URL = "https://api-salud.herokuapp.com/"
+//    }
+//
+//    //    Request using @Query (e.g https://reqres.in/api/users?page=2)
+//    @GET("/users")
+//    suspend fun getUsers(): RegistroList
+////    https://api-salud.herokuapp.com
+//}
